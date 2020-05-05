@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
-import Person from "./components/Character";
+import Character from "./components/Character";
 
 const App = () => {
   const [state, setState] = useState([]);
@@ -13,7 +13,7 @@ const App = () => {
     });
   }, []);
   const mapData = state.map((item)=>(
-    <Person characterData={item}/>
+    <Character characterData={item}/>
   ))
  
 
@@ -26,7 +26,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">About Characters </h1>
+      <h1 className="Header">About Star Wars Characters </h1>
       {mapData}
     </div>
   );
