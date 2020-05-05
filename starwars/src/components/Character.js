@@ -17,8 +17,8 @@ const Character = (props) => {
   return (
     <DivBackground>
       <NameBackground>{props.characterData.name}</NameBackground>
-      <p> height: ~{props.characterData.height/30.5} ft</p>
-      <p> weight: {props.characterData.mass*2.2} lbs</p>
+      <p> height: {Math.round(props.characterData.height/30.5)} ft</p>
+      <p> weight: {Math.round(props.characterData.mass*2.2)} lbs</p>
       <p> eye color: {props.characterData.eye_color}</p>
     </DivBackground>
   );

@@ -13,7 +13,7 @@ const App = () => {
     });
   }, []);
   const mapData = state.map((item)=>(
-    <Character characterData={item}/>
+    <Character key={item.name} characterData={item}/>
   ))
  
 
