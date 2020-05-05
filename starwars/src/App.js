@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
+import Character from "./components/Character";
 
 const App = () => {
-  const [state, setState] = useState({});
+  const [state, setState] = useState([]);
 
   useEffect(() => {
     axios.get("https://rickandmortyapi.com/api/character/").then((response) => {
@@ -11,10 +12,14 @@ const App = () => {
       console.log(response.data.results);
     });
   }, []);
+  const mapData = state.map((item) => (
+    <Character key={item.id} characterData={item} />
+  ));
+
   return (
     <div className="App">
       <h1> Characters</h1>
-      <img src={state.url} />
+      {mapData}
     </div>
   );
   // Try to think through what state you'll need for this app before starting. Then build out
